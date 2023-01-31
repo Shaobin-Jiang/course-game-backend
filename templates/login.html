@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <title>登录</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="/assets/user.css" rel="stylesheet" />
+
+    <script>
+        history.replaceState(null, null)
+    </script>
+  </head>
+  <body>
+    <form action="" method="post">
+      {% csrf_token %}
+
+      <div id="wrapper">
+        <!-- Logo image -->
+        <div class="logo"><img src="/assets/logo.png" /></div>
+
+        <!-- Show error message -->
+        {% if tips %}
+        <div class="tip">{{ tips }}</div>
+        {% endif %}
+
+        <div class="form-item">
+          <input
+            type="text"
+            value="{{ id }}"
+            placeholder="学号"
+            name="id"
+            autocomplete="off"
+            required
+          />
+        </div>
+
+        <div class="form-item">
+          <input
+            type="password"
+            placeholder="密码"
+            name="password"
+            autocomplete="off"
+            required
+          />
+        </div>
+
+        <div class="link">
+            <a href="/register">注册账号</a>
+            <a href="/findpassword">忘记密码</a>
+        </div>
+
+        <button type="submit" class="submit-button">登录</button>
+      </div>
+    </form>
+
+    <script>
+      document.addEventListener("keyup", (event) => {
+        if (event.key == "Enter") {
+          document.querySelector(".submit-button").click();
+        }
+      });
+    </script>
+  </body>
+</html>
