@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <title>心理学经典研究I</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="/assets/config-classic-studies-1/session-split-brain.js"></script>
+        <script src="/assets/config-classic-studies-1/session-minnesota-twins.js"></script>
+        <script src="/assets/config-classic-studies-1/session-rats.js"></script>
+        <script src="/assets/config-classic-studies-1/session-visual-cliff.js"></script>
+        <script src="/assets/config-classic-studies-1/session-dreams.js"></script>
+    </head>
+    <body>
+        <form action="">{% csrf_token %}</form>
+        <script>
+            window.progress = {
+                session: {{ session }},
+                level: {{ level }},
+                scene: {{ scene }}
+            }
+        </script>
+        <script src="/assets/config-classic-studies-1/init.js"></script>
+        <script src="/assets/lib/main.js"></script>
+    </body>
+</html>
