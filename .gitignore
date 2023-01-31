@@ -1,0 +1,7 @@
+BackEnd/config.py
+assets/
+**/__pycache__/
+**/migrations/
+index/static/*
+!index/static/config-classic-studies-1/
+!index/static/config-classic-studies-2
