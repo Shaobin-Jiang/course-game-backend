@@ -1,0 +1,200 @@
+* {
+    margin: 0 0;
+    overflow-x: hidden;
+    padding: 0 0;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.item-warning {
+    background-color: lightsalmon;
+}
+
+#header {
+    align-items: center;
+    background-color: #417690;
+    color: #f5dd5d;
+    display: flex;
+    height: 30px;
+    font-size: 24px;
+    justify-content: start;
+    padding: 10px 40px;
+    position: fixed;
+    user-select: none;
+    width: 100vw;
+    z-index: 99;
+}
+
+#tips {
+    background-color: rgb(240, 240, 240);
+    border-right: solid lightgray 1px;
+    bottom: 0;
+    box-sizing: border-box;
+    height: calc(100vh - 32px);
+    padding: 50px 10px;
+    position: fixed;
+    width: 18vw;
+}
+
+#tips p {
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 20px 0;
+    text-align: justify;
+}
+
+#wrapper {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    width: 100vw;
+}
+
+#toolbar {
+    align-items: center;
+    border-bottom: solid lightgray 1px;
+    display: flex;
+    height: 10vh;
+    margin-bottom: 2vh;
+    margin-top: calc(5vh + 32px);
+    width: 60vw;
+}
+
+#uploadButton {
+    align-items: center;
+    background-color: lightgray;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    font-size: 2vh;
+    height: 40%;
+    justify-content: center;
+    margin-left: 5%;
+    width: 15%;
+}
+
+#uploadButton:hover {
+    opacity: 0.8;
+}
+
+#message {
+    color: red;
+    font-size: 1vh;
+    font-weight: bold;
+    margin-left: 5%;
+    width: 55%;
+}
+
+#confirmUpload {
+    align-items: center;
+    background-color: lightgray;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    font-size: 2vh;
+    height: 40%;
+    justify-content: center;
+    width: 15%;
+}
+
+#confirmUpload:hover {
+    opacity: 0.8;
+}
+
+/* Table for displaying parsed result */
+#parseResultDisplay {
+    border-collapse: collapse;
+    margin-bottom: 5vh;
+    width: 60vw;
+}
+
+#parseResultDisplay tbody {
+    width: 100%;
+}
+
+#parseResultDisplay tr {
+    height: 2vh;
+    width: 100%;
+}
+
+#parseResultDisplay td {
+    border: solid black 1px;
+    font-size: 1vh;
+    text-align: center;
+}
+
+#parseResultDisplay .td-header {
+    background-color: lightgray;
+    font-weight: bold;
+}
+
+#parseResultDisplay .td-id {
+    width: 20%;
+}
+
+#parseResultDisplay .td-name {
+    width: 20%;
+}
+
+#parseResultDisplay .td-class {
+    width: 20%;
+}
+
+#parseResultDisplay .td-comment {
+    box-sizing: border-box;
+    padding-left: 1vw;
+    text-align: justify;
+    width: 40%;
+}
+
+#groups {
+    border-left: solid lightgray 1px;
+    box-sizing: border-box;
+    height: 100vh;
+    overflow: hidden;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 19vw;
+}
+
+#groupTitle {
+    font-size: 2vh;
+    font-weight: bold;
+    height: 4vh;
+    line-height: 4vh;
+    margin-bottom: 20px;
+    margin-top: 50px;
+    text-align: center;
+}
+
+#groupSelect {
+    border: none;
+    box-sizing: border-box;
+    height: calc(100% - 4vh - 70px);
+    outline: none;
+    overflow: hidden;
+    width: 100%;
+}
+
+#groupSelect div {
+    align-items: center;
+    background-color: rgb(245, 245, 245);
+    border-bottom: solid black 1px;
+    box-sizing: border-box;
+    display: flex;
+    font-size: 1vh;
+    height: calc(3vh + 10px);
+    padding: 5px 10px;
+}
+
+#groupSelect div:first-child {
+    border-top: solid black 1px;
+}
+
+#groupSelect input {
+    margin-right: 10px;
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <title>批量导入用户</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="/assets/styles/add-users.css" />
+    <script src="/assets/scripts/xlsx.core.min.js"></script>
+  </head>
+  <body>
+    <form action="">{% csrf_token %}</form>
+    <input type="file" id="hiddenUpload" class="hidden" accept=".xlsx" />
+    <div id="header">应用：批量导入用户</div>
+    <div id="tips">
+      <h2>使用说明</h2>
+      <p>
+        当前游戏系统的设计仅允许选课的同学进行游戏的注册。因而，虽然这个网站有注册入口，但仍需要先导入允许注册的同学名单。当前工具使用方式如下：
+      </p>
+      <p>
+        1. 点击右侧的 <b>上传文件</b> 按钮，选择相应的 <b>.xlsx</b> 文件（注意，当前工具暂不支持.xls格式的文件）。
+      </p>
+      <p>
+        2. 上传的文件应包含3列内容，依次为：学号，姓名，班级。当前工具仅会读取第一个工作表的前3列内容，请务必确保格式正确。
+      </p>
+      <p>
+        3. 上传的文件中，可以包含表头，也可以不包含表头（第一行即为学生信息）。
+      </p>
+      <p>
+        4. 上传后，工具会将解析后的结果呈现出来，如果确认无误，可以在屏幕右侧选择需要添加的用户组，然后点击 <b>确认上传</b> 按钮，提交到后台。也可以选择只添加用户，而不选择要赋予的权限。
+      </p>
+      <p>
+        需要注意的是，通过这一页面添加的用户只拥有普通权限，如果需要添加具有管理员权限的用户，更推荐直接在<a href="http://127.0.0.1:8000/admin/user/player/add/">管理员界面</a>进行。
+      </p>
+    </div>
+    <div id="wrapper">
+      <div id="toolbar">
+        <div id="uploadButton">上传文件</div>
+        <div id="message"></div>
+        <div id="confirmUpload" class="hidden">确认上传</div>
+      </div>
+      <div id="parseResult"></div>
+    </div>
+    <div id="groups">
+        <p id="groupTitle">用户组</p>
+        <div id="groupSelect">
+            {% for group in groups %}
+            <div><input type="checkbox" name="group"> {{ group }}</div>
+            {% endfor %}
+        </div>
+    </div>
+    <script src="/assets/scripts/add-users.js"></script>
+  </body>
+</html>
