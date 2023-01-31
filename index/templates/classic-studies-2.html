@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <title>心理学经典研究II</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <script src="/assets/config-classic-studies-2/session-albert.js"></script>
+        <script src="/assets/config-classic-studies-2/session-superstitious-pigeons.js"></script>
+        <script src="/assets/config-classic-studies-2/session-rosenthal.js"></script>
+    </head>
+    <body>
+        <form action="">{% csrf_token %}</form>
+        <script>
+            window.progress = {
+                session: {{ session }},
+                level: {{ level }},
+                scene: {{ scene }}
+            }
+        </script>
+        <script src="/assets/config-classic-studies-2/init.js"></script>
+        <script src="/assets/lib/main.js"></script>
+    </body>
+</html>
