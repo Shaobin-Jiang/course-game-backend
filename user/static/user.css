@@ -1,0 +1,125 @@
+* {
+    margin: 0 0;
+    overflow: hidden;
+    padding: 0 0;
+}
+
+body {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+a {
+    color: blue;
+    text-decoration: none;
+}
+
+a:visited {
+    color: blue;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+#wrapper {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    width: 50vw;
+}
+
+.logo {
+    height: 15%;
+    margin-bottom: 5%;
+    width: 50%;
+}
+
+.logo img {
+    height: 100%;
+    object-fit: scale-down;
+    width: 100%;
+}
+
+.tip {
+    color: red;
+    font-size: 2vh;
+    font-weight: bold;
+    margin-bottom: 5%;
+    width: 50%;
+}
+
+.form-item {
+    box-sizing: border-box;
+    border-bottom: solid gray 1px;
+    height: 4%;
+    margin-bottom: 6%;
+    width: 50%;
+}
+
+.form-item input {
+    border: none;
+    font-size: 2vh;
+    height: 100%;
+    outline: none;
+    width: 100%;
+}
+
+.link {
+    align-items: center;
+    color: blue;
+    display: flex;
+    font-size: 1vh;
+    justify-content: space-between;
+    width: 50%;
+}
+
+.submit-button {
+    align-items: center;
+    background-color: lightskyblue;
+    border: none;
+    border-radius: 1vh;
+    box-sizing: border-box;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    font-size: 3vh;
+    height: 5%;
+    justify-content: center;
+    margin-top: 4%;
+    width: 20%;
+}
+
+.submit-button:hover {
+    background-color: skyblue;
+}
+
+.game-item {
+    align-items: center;
+    background-color: skyblue;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    font-size: 2vh;
+    height: 4vh;
+    justify-content: center;
+    margin-bottom: 2vh;
+    width: 15vw;
+}
+
+.game-item:hover {
+    background-color: lightskyblue;
+}
+
+.game-item-link:hover {
+    text-decoration: none;
+}
+
+.no-perm .game-item {
+    color: gray;
+    opacity: 0.6;
+}
