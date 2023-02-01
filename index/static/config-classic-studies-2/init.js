@@ -8,7 +8,7 @@ window.sessions = [
     {position: [18.58, 11.12, 1.64, 1.64, scale], get: window.loaded_sessions.albert()},
     {position: [9.45, 10.56, 1.64, 1.64, scale], get: window.loaded_sessions.superstitious_pigeons()},
     {position: [21.63, 7.89, 1.64, 1.64, scale], get: window.loaded_sessions.rosenthal()},
-    // {position: [28.42, 11.12, 1.64, 1.64, scale], get: window.loaded_sessions.visual_cliff()},
+    {position: [28.42, 11.12, 1.64, 1.64, scale], get: window.loaded_sessions.maps()},
     // {position: [4.53, 11.38, 1.64, 1.64, scale], get: window.loaded_sessions.dreams()},
 ];
 
