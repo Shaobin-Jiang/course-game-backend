@@ -10,6 +10,7 @@ window.sessions = [
     {position: [21.63, 7.89, 1.64, 1.64, scale], get: window.loaded_sessions.rosenthal()},
     {position: [28.42, 11.12, 1.64, 1.64, scale], get: window.loaded_sessions.maps()},
     {position: [4.53, 11.38, 1.64, 1.64, scale], get: window.loaded_sessions.memory()},
+    {position: [18.58, 14.27, 1.64, 1.64, scale], get: window.loaded_sessions.love()},
 ];
 
 window.about_text = `
