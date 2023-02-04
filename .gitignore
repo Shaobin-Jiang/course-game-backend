@@ -5,3 +5,4 @@ assets/
 index/static/*
 !index/static/config-classic-studies-1/
 !index/static/config-classic-studies-2
+!index/static/lib
