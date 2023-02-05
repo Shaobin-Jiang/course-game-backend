@@ -148,7 +148,7 @@ window.image_list = [
     'rosenthal/market6_1_9.png',
     'rosenthal/random-20.png',
     'rosenthal/random-80.png',
-]
+].map((value) => '/assets/classic-studies-2/' + value);
 
 window.game_map = '/assets/classic-studies-2/lobby_bg.jpg';
 window.finished_marker = '/assets/classic-studies-2/lock_btn.png';
