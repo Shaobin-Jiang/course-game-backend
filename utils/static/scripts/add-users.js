@@ -54,9 +54,9 @@ async function upload_callback() {
         let tr = document.createElement('tr');
 
         let item = parse_json[row];
-        let user_id = item.id || '';
-        let user_name = item.name || '';
-        let user_class = item.class || '';
+        let user_id = String(item.id || '');
+        let user_name = String(item.name || '');
+        let user_class = String(item.class || '');
 
         let message = '';
         let remove = false;
