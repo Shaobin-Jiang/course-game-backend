@@ -1,6 +1,7 @@
 let scale = 3200 / 33.87;
 
-window.static_url = 'http://127.0.0.1:8000';
+// window.static_url = 'http://127.0.0.1:8000';
+window.static_url = 'http://bnu-psy.oss-cn-beijing.aliyuncs.com';
 window.image_list = [
     'house_bg.jpg',
     'lobby_bg.jpg',
