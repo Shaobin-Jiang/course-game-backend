@@ -15,6 +15,8 @@ class PlayerAdmin(UserAdmin):
     actions = [
         'authorize_classic_studies_1', 
         'ban_classic_studies_1',
+        'authorize_classic_studies_2', 
+        'ban_classic_studies_2',
     ]
 
     list_display = [
@@ -104,6 +106,21 @@ class PlayerAdmin(UserAdmin):
     @admin.action(description='禁止游玩 心理学经典研究I 小游戏')
     def ban_classic_studies_1(self, request, queryset):
         group = Group.objects.get(name='心理学经典研究I')
+        targets = list(queryset)
+        for player in targets:
+            player.groups.remove(group)
+        self.message_user(request, ngettext('成功移除 %d 名玩家', '成功移除 %d 名玩家', len(targets),) % len(targets), messages.SUCCESS)
+    @admin.action(description='允许游玩 心理学经典研究II 小游戏')
+    def authorize_classic_studies_2(self, request, queryset):
+        group = Group.objects.get(name='心理学经典研究II')
+        targets = list(queryset)
+        for player in targets:
+            player.groups.add(group)
+        self.message_user(request, ngettext('成功添加 %d 名玩家', '成功添加 %d 名玩家', len(targets),) % len(targets), messages.SUCCESS)
+
+    @admin.action(description='禁止游玩 心理学经典研究II 小游戏')
+    def ban_classic_studies_2(self, request, queryset):
+        group = Group.objects.get(name='心理学经典研究II')
         targets = list(queryset)
         for player in targets:
             player.groups.remove(group)
