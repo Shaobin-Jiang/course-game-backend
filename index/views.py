@@ -26,11 +26,12 @@ def game_view(request, used_model, template, max_session):
         player.save()
     else:
         player = user[0]
-        if player.user.is_staff and player.session < max_session:
-            player.session = max_session
-            player.level = 0
-            player.scene = 0
-            player.save()
+
+    if player.user.is_staff and player.session < max_session:
+        player.session = max_session
+        player.level = 0
+        player.scene = 0
+        player.save()
 
     log_path = os.path.join('.', 'log', template.split('.')[0])
     if not os.path.exists(log_path):
