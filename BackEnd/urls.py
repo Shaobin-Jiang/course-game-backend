@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path, include, re_path
 from django.conf import settings
 from django.views import static
+from django.views.generic.base import RedirectView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -24,4 +25,5 @@ urlpatterns = [
     path('', include('user.urls')),
     path('', include('utils.urls')),
     re_path(r'^assets/(?P<path>.*)', static.serve, {'document_root': settings.STATIC_ROOT}),
+    path('favicon.ico', RedirectView.as_view(url='assets/favicon.ico')),
 ]
