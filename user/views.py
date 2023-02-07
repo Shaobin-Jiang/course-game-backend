@@ -50,10 +50,6 @@ def register_view(request):
         if id == '' or email == '' or password.strip() == '' or confirm_password.strip() == '':
             dict.update(tips='您必须填写所有字段！')
 
-        # Check ID
-        elif len(id.strip()) != 12 or regex_contains_nan.search(id.strip()) != None:
-            dict.update(tips='您填写的学号无效！学号应为12位纯数字！')
-
         # Check email
         elif email.strip().find('@') == -1:
             dict.update(tips='电子邮件地址无效，请在电子邮件地址中包括@！')
