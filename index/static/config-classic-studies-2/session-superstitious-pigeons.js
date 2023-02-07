@@ -108,7 +108,7 @@ window.loaded_sessions.superstitious_pigeons = function () {
             {name: 'img', params: ['/assets/classic-studies-2/pigeons/clock_20.png', [26.36, 8.25, 3, 2.25, scale]]},
             {name: 'text', params: ['15秒的时间间隔到了', [5.67, 14.42, 5.69, 0.94, scale], '#000000', 36]},
             {name: 'text', params: ['这只鸽子刚好在跳舞', [14.09, 14.42, 5.69, 0.94, scale], '#000000', 36]},
-            {name: 'text', params: ['这只鸽子刚好啄了一下按钮', [22.01, 14.42, 7.62, 0.94, scale], 36]},
+            {name: 'text', params: ['这只鸽子刚好啄了一下按钮', [22.01, 14.42, 7.62, 0.94, scale], '#000000', 36]},
         ],
         correct_func: (components) => {
             return components[0].whereabout == 0;
