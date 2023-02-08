@@ -401,7 +401,7 @@ window.loaded_sessions.memory = function () {
             {name: 'img', params: ['/assets/classic-studies-2/memory/game1_2_2.png', [14.85, 3.59, 8.82, 9.95, scale]]},
         ],
         correct_func: (components) => {
-            return equals(components.slice(0, 4), [-1, 0, -1, 1]);
+            return equals(components.slice(0, 4), [-1, 0, -1, 1]) || equals(components.slice(0, 4), [-1, 1, -1, 0]);
         },
     };
 
