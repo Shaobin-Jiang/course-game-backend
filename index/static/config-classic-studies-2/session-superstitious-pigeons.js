@@ -47,7 +47,7 @@ window.loaded_sessions.superstitious_pigeons = function () {
 
     let scene_1_2 = {
         question:
-            '现在，我们要为鸽子设定形成“迷信”行为的投喂时间间隔。你还记得斯金纳最开始是如何设置的吗？请把正确的时间间隔（每XX秒投喂一次）拖到装置中吧。',
+            '现在，我们要为鸽子设定形成“迷信”行为的投喂时间间隔。你还记得斯金纳最开始是如何设置的吗？请选择正确的时间间隔（每XX秒投喂一次）吧。',
         layout: [
             {
                 name: 'single-select',
