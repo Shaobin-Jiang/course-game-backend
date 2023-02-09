@@ -3,12 +3,12 @@ let scale = 3200 / 33.87;
 // window.static_url = 'http://127.0.0.1:8000';
 window.static_url = 'http://bnu-psy.oss-cn-beijing.aliyuncs.com';
 window.image_list = [
-    'house_bg.jpg',
-    'lobby_bg.jpg',
-    'lock_btn.png',
-    'play_bg.jpg',
-    'play_btn.png',
-    'room_flag.png',
+    ['house_bg.jpg', true],
+    ['lobby_bg.jpg', true],
+    ['lock_btn.png', true],
+    ['play_bg.jpg', true],
+    ['play_btn.png', true],
+    ['room_flag.png', true],
     'albert/doc-1-1.jpg',
     'albert/game5_1_1.png',
     'albert/market5_1_1.png',
@@ -148,7 +148,14 @@ window.image_list = [
     'rosenthal/market6_1_9.png',
     'rosenthal/random-20.png',
     'rosenthal/random-80.png',
-].map((value) => '/assets/classic-studies-2/' + value);
+].map((value) => {
+    if (Array.isArray(value)) {
+        value[0] = '/assets/classic-studies-2/' + value[0];
+        return value;
+    } else {
+        return '/assets/classic-studies-2/' + value;
+    }
+});
 
 window.game_map = '/assets/classic-studies-2/lobby_bg.jpg';
 window.finished_marker = '/assets/classic-studies-2/lock_btn.png';
