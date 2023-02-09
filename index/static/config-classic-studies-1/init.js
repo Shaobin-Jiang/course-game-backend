@@ -3,9 +3,9 @@ let scale = 3200 / 33.87;
 // window.static_url = 'http://127.0.0.1:8000';
 window.static_url = 'http://bnu-psy.oss-cn-beijing.aliyuncs.com';
 window.image_list = [
-    ['lobby_bg.jpg', true],
-    ['lock_btn.png', true],
-    ['play_btn.png', true],
+    'lobby_bg.jpg',
+    'lock_btn.png',
+    'play_btn.png',
     'dreams/command-no-sleep-false-reason.png',
     'dreams/command-no-sleep-true-reason.png',
     'dreams/command-sleep.png',
@@ -169,14 +169,7 @@ window.image_list = [
     'visual-cliff/terrified-chick.png',
     'visual-cliff/terrified-rat.png',
     'visual-cliff/terrified-sheep.png',
-].map((value) => {
-    if (Array.isArray(value)) {
-        value[0] = '/assets/classic-studies-1/' + value[0];
-        return value;
-    } else {
-        return '/assets/classic-studies-1/' + value;
-    }
-});
+].map((value) => '/assets/classic-studies-1/' + value);
 
 window.game_map = '/assets/classic-studies-1/lobby_bg.jpg';
 window.finished_marker = '/assets/classic-studies-1/lock_btn.png';
