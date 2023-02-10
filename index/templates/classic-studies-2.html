@@ -4,12 +4,13 @@
         <title>心理学经典研究II</title>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <script src="/assets/config-classic-studies-2/session-albert.js"></script>
-        <script src="/assets/config-classic-studies-2/session-superstitious-pigeons.js"></script>
-        <script src="/assets/config-classic-studies-2/session-rosenthal.js"></script>
-        <script src="/assets/config-classic-studies-2/session-maps.js"></script>
-        <script src="/assets/config-classic-studies-2/session-memory.js"></script>
-        <script src="/assets/config-classic-studies-2/session-love.js"></script>
+        {% load versioning %}
+        <script src="/assets/config-classic-studies-2/session-albert.js?{% versioning %}"></script>
+        <script src="/assets/config-classic-studies-2/session-superstitious-pigeons.js?{% versioning %}"></script>
+        <script src="/assets/config-classic-studies-2/session-rosenthal.js?{% versioning %}"></script>
+        <script src="/assets/config-classic-studies-2/session-maps.js?{% versioning %}"></script>
+        <script src="/assets/config-classic-studies-2/session-memory.js?{% versioning %}"></script>
+        <script src="/assets/config-classic-studies-2/session-love.js?{% versioning %}"></script>
     </head>
     <body>
         <form action="">{% csrf_token %}</form>
@@ -20,7 +21,7 @@
                 scene: {{ scene }}
             }
         </script>
-        <script src="/assets/config-classic-studies-2/init.js"></script>
-        <script src="/assets/lib/main.js"></script>
+        <script src="/assets/config-classic-studies-2/init.js?{% versioning %}"></script>
+        <script src="/assets/lib/main.js?{% versioning %}"></script>
     </body>
 </html>

@@ -4,7 +4,7 @@
     <title>批量导入用户</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="/assets/styles/add-users.css" />
+    <link rel="stylesheet" href="/assets/styles/add-users.css?{% versioning %}" />
     <script src="/assets/scripts/xlsx.core.min.js"></script>
   </head>
   <body>
@@ -48,6 +48,6 @@
             {% endfor %}
         </div>
     </div>
-    <script src="/assets/scripts/add-users.js"></script>
+    <script src="/assets/scripts/add-users.js?{% versioning %}"></script>
   </body>
 </html>

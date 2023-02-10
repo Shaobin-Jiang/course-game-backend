@@ -4,11 +4,11 @@
         <title>心理学经典研究I</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <script src="/assets/config-classic-studies-1/session-split-brain.js"></script>
-        <script src="/assets/config-classic-studies-1/session-minnesota-twins.js"></script>
-        <script src="/assets/config-classic-studies-1/session-rats.js"></script>
-        <script src="/assets/config-classic-studies-1/session-visual-cliff.js"></script>
-        <script src="/assets/config-classic-studies-1/session-dreams.js"></script>
+        <script src="/assets/config-classic-studies-1/session-split-brain.js?{% versioning %}"></script>
+        <script src="/assets/config-classic-studies-1/session-minnesota-twins.js?{% versioning %}"></script>
+        <script src="/assets/config-classic-studies-1/session-rats.js?{% versioning %}"></script>
+        <script src="/assets/config-classic-studies-1/session-visual-cliff.js?{% versioning %}"></script>
+        <script src="/assets/config-classic-studies-1/session-dreams.js?{% versioning %}"></script>
     </head>
     <body>
         <form action="">{% csrf_token %}</form>
@@ -19,7 +19,7 @@
                 scene: {{ scene }}
             }
         </script>
-        <script src="/assets/config-classic-studies-1/init.js"></script>
-        <script src="/assets/lib/main.js"></script>
+        <script src="/assets/config-classic-studies-1/init.js?{% versioning %}"></script>
+        <script src="/assets/lib/main.js?{% versioning %}"></script>
     </body>
 </html>
