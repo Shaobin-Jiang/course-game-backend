@@ -288,7 +288,7 @@ window.loaded_sessions.rosenthal = function () {
             },
             {
                 name: 'img',
-                params: ['/assets/classic-studies-2/rosenthal/game6_2_2_1.png', [5.4, 3.06, 7.06, 12.35, scale]],
+                params: ['/assets/classic-studies-2/rosenthal/game6_2_3_1.png', [5.77, 5.26, 18.26, 9.61, scale]],
             },
             {
                 name: 'img',
