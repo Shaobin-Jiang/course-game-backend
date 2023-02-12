@@ -6,7 +6,7 @@ window.loaded_sessions.split_brain = function () {
     let scale = 3200 / 33.87;
 
     let scene_1_1 = {
-        question: '胼胝体在哪里？切一刀看看吧',
+        question: '胼胝体在哪里？切一刀看看吧（你会看到三处高亮的目标区域，它们对应着三处可能的切割位置，把手术刀拖动到正确的切割位置即可）',
         layout: [
             {name: 'img', params: ['/assets/classic-studies-1/split-brain/market_brain.png', [12.26, 6.03, 9.33, 7, scale]]},
             {
