@@ -7,3 +7,4 @@ index/static/*
 !index/static/config-classic-studies-2
 !index/static/lib
 !index/static/favicon.ico
+log/
