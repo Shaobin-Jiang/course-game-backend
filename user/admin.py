@@ -20,30 +20,20 @@ class PlayerAdmin(UserAdmin):
     ]
 
     list_display = [
-        'username', 'full_name', 'student_class', 'email', 'is_staff', 'is_active'
+        'username', 'full_name', 'student_class', 'email', 'is_staff', 'is_active', 'headquarter'
     ]
 
     list_display_links = ['username']
 
     list_editable = ('full_name', 'student_class', 'email', 'is_active')
 
-    list_filter = ['student_class', 'is_staff', 'is_active']
+    list_filter = ['student_class', 'is_staff', 'is_active', 'headquarter']
 
     formfield_overrides = {
         models.CharField: {'widget': TextInput(attrs={'size': '16'})}
     }
 
     ordering = ['full_name', 'username', 'student_class', 'is_staff']
-
-    add_fieldsets = (
-        (
-            None,
-            {
-                'classes': ('wide',),
-                'fields': ('username', 'password1', 'password2', 'is_staff'),
-            },
-        ),
-    )
 
     list_per_page = 200
 
@@ -56,13 +46,21 @@ class PlayerAdmin(UserAdmin):
         has_permission = super().has_view_permission(request, obj)
         return request.user.is_staff or has_permission
 
-    def has_add_permission(self, request):
-        has_permission = super().has_add_permission(request)
-        return request.user.is_staff or has_permission
-
     def has_change_permission(self, request, obj=None):
         has_permission = super().has_change_permission(request, obj)
         return request.user.is_staff or has_permission
+
+    def get_list_display(self, request):
+        if not request.user.is_superuser:
+            return ['username', 'full_name', 'student_class', 'is_active']
+        else:
+            return self.list_display
+
+    def get_list_filter(self, request):
+        if not request.user.is_superuser:
+            return ['student_class', 'is_staff', 'is_active']
+        else:
+            return self.list_filter
 
     def get_readonly_fields(self, request, obj=None):
         if request.user.is_superuser:
@@ -76,22 +74,26 @@ class PlayerAdmin(UserAdmin):
         if request.user.is_superuser:
             return queryset
         else:
-            return queryset.filter(is_superuser=False)
+            return queryset.filter(is_superuser=False).filter(headquarter=request.user.headquarter)
 
     def get_fieldsets(self, request, obj=None):
-        if request.user.is_superuser:
-            fieldsets = (
-                (_('Personal info'), {'fields': ('username', 'full_name', 'student_class', 'email')}),
+        fieldsets = (
+            (_('Personal info'), {'fields': ('username', 'full_name', 'student_class', 'headquarter', 'email')}),
+            (_('Permissions'), {'fields': ('is_active','is_staff', 'is_superuser', 'groups', 'user_permissions',),},),
+            (_('Important dates'), {'fields': ('last_login', 'date_joined')}),
+        )
+
+        if not obj:
+            return (
+                (_('Personal info'), {'fields': ('username', 'full_name', 'student_class', 'headquarter', 'email', 'password1', 'password2')}),
+                (_('Permissions'), {'fields': ('is_active','is_staff', 'is_superuser', 'groups',),},),
+            )
+        else:
+            return (
+                (_('Personal info'), {'fields': ('username', 'full_name', 'student_class', 'headquarter', 'email')}),
                 (_('Permissions'), {'fields': ('is_active','is_staff', 'is_superuser', 'groups', 'user_permissions',),},),
                 (_('Important dates'), {'fields': ('last_login', 'date_joined')}),
             )
-        else:
-            fieldsets = (
-                (_('Personal info'), {'fields': ('username', 'full_name', 'student_class', 'email')}),
-                (_('Permissions'), {'fields': ('is_active', 'is_staff',),},),
-            )
-
-        return fieldsets
 
     # Actions
     @admin.action(description='允许游玩 心理学经典研究I 小游戏')
