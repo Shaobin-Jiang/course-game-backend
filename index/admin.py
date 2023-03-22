@@ -8,6 +8,8 @@ class GameAdmin(admin.ModelAdmin):
 
     list_display_links = ['user', 'session', 'level', 'scene']
 
+    list_filter = ['user__student_class', 'user__headquarter', 'session']
+
     ordering = ['user', 'session']
 
     list_per_page = 200
@@ -37,9 +39,12 @@ class GameAdmin(admin.ModelAdmin):
         has_permission = super().has_delete_permission(request, obj)
         return request.user.is_staff or has_permission
 
-    # def get_list_filter(self, request):
-    #     if request.user.is_superuser:
-    #         return 
+    def get_list_filter(self, request):
+        if not request.user.is_superuser:
+            return ['user__student_class', 'session']
+        else:
+            return self.list_filter
+
 
     def get_queryset(self, request):
         queryset = super().get_queryset(request)
