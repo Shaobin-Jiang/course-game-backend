@@ -37,7 +37,8 @@ def add_users_view(request):
                             full_name=user_name,
                             student_class=user_class,
                             password='123456',
-                            email=user_id + '@bnu.edu.cn'
+                            email=user_id + '@bnu.edu.cn',
+                            headquarter=request.user.headquarter
                         )
                     else:
                         player = potential_existing_players[0]
