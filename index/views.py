@@ -33,7 +33,7 @@ def game_view(request, used_model, template, max_session):
         player.scene = 0
         player.save()
 
-    log_path = os.path.join('.', 'log', template.split('.')[0])
+    log_path = os.path.join('.', 'log', 'bnu' if player.user.headquarter else 'bnuzh', template.split('.')[0])
     if not os.path.exists(log_path):
         os.makedirs(log_path)
 
