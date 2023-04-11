@@ -64,7 +64,7 @@ def game_view(request, used_model, template, max_session):
                 if not player.user.is_staff:
                     with open(log_file, 'a+', encoding='utf-8') as f:
                         log_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-                        log_type = 'DONE' if scene - int(scene)< 0.1 else 'FAIL'
+                        log_type = 'DONE' if scene - int(scene) < 0.1 else 'FAIL'
                         log_content = f'[{log_time}] {log_type}: session={int(session)}, level={int(level)}, scene={int(scene)}\n'
                         f.write(log_content)
 
