@@ -127,3 +127,8 @@ class PlayerAdmin(UserAdmin):
         for player in targets:
             player.groups.remove(group)
         self.message_user(request, ngettext('成功移除 %d 名玩家', '成功移除 %d 名玩家', len(targets),) % len(targets), messages.SUCCESS)
+
+    authorize_classic_studies_1.confirm = '确认执行？'
+    ban_classic_studies_1.confirm = '确认执行？'
+    authorize_classic_studies_2.confirm = '确认执行？'
+    ban_classic_studies_2.confirm = '确认执行？'

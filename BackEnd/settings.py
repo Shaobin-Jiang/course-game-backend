@@ -14,6 +14,7 @@ DEBUG = False
 ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
+    'simpleui',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -29,7 +30,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.locale.LocaleMiddleware', # use Chinese
+    'django.middleware.locale.LocaleMiddleware',  # use Chinese
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -107,3 +108,12 @@ EMAIL_PORT = CONFIG.get('EMAIL_PORT')
 EMAIL_HOST_USER = CONFIG.get('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = CONFIG.get('EMAIL_HOST_PASSWORD')
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+
+# Simpleui config
+SIMPLEUI_HOME_INFO = False
+SIMPLEUI_HOME_ACTION = False
+SIMPLEUI_ANALYSIS = False
+SIMPLEUI_ICON = {
+    '心理学经典研究I': 'fas fa-gamepad',
+    '心理学经典研究II': 'fas fa-gamepad',
+}

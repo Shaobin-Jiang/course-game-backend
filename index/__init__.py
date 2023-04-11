@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
-default_app_config = 'index.IndexConfig'
+# default_app_config = 'index.IndexConfig'
 
 class IndexConfig(AppConfig):
     name = 'index'
