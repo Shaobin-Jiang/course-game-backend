@@ -52,6 +52,7 @@ def game_view(request, used_model, template, max_session):
         session = float(data['session'])
         level = float(data['level'])
         scene = float(data['scene'])
+        summary = data['summary']
 
         # Progress cannot move backward
         if 100 * int(session) + 10 * int(level) + int(scene) >= 100 * old_session + 10 * old_level + old_scene:
@@ -65,7 +66,7 @@ def game_view(request, used_model, template, max_session):
                     with open(log_file, 'a+', encoding='utf-8') as f:
                         log_time = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
                         log_type = 'DONE' if scene - int(scene) < 0.1 else 'FAIL'
-                        log_content = f'[{log_time}] {log_type}: session={int(session)}, level={int(level)}, scene={int(scene)}\n'
+                        log_content = f'[{log_time}] {log_type}: session={int(session)}, level={int(level)}, scene={int(scene)} --- {summary}\n'
                         f.write(log_content)
 
                 return HttpResponse(b'1')
