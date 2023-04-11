@@ -19,6 +19,8 @@ class PlayerAdmin(UserAdmin):
         'ban_classic_studies_2',
     ]
 
+    search_fields = ('username', 'full_name')
+
     list_display = [
         'username', 'full_name', 'student_class', 'email', 'is_staff', 'is_active', 'headquarter'
     ]

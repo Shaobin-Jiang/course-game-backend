@@ -4,6 +4,8 @@ from django.utils.translation import gettext_lazy as _
 from .models import *
 
 class GameAdmin(admin.ModelAdmin):
+    search_fields = ('user__username', 'user__full_name')
+
     list_display = ['user', 'full_name', 'student_class', 'session', 'level', 'scene']
 
     list_display_links = ['user', 'session', 'level', 'scene']
