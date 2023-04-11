@@ -9,8 +9,7 @@ SECRET_KEY = CONFIG.get('SECRET_KEY')
 SECURE_CROSS_ORIGIN_OPENER_POLICY = 'None'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = False
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
