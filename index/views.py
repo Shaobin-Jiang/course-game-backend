@@ -16,6 +16,12 @@ def index(request):
         has_perm = request.user.has_perm(game_info[i][2])
         game_list.append((game_info[i][0], game_info[i][1], has_perm))
 
+    # TODO: allow staff users to see this tab once the testing is complete
+    if request.user.is_superuser:
+        game_list.append(('游戏平台管理系统', '/admin', True))
+
+    game_list.append(('退出登录', '/logout', True))
+
     return render(request, 'index.html', {'game_list': game_list})
 
 # Call this function in view functions to simplify coding
