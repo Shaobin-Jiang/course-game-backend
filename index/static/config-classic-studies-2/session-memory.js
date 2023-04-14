@@ -871,7 +871,11 @@ window.loaded_sessions.memory = function () {
                 .slice(0, 7)
                 .sort((a, b) => a.whereabout - b.whereabout)
                 .map((value) => value.whereabout);
-            return whereabout.indexOf(1) == 6 && whereabout.indexOf(0) == -1;
+            return (
+                whereabout[5] == -1 &&
+                whereabout[6] > -1 &&
+                (components[0].whereabout > -1 || components[1].whereabout > -1)
+            );
         },
     };
 
