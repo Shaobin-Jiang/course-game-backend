@@ -22,14 +22,14 @@ class PlayerAdmin(UserAdmin):
     search_fields = ('username', 'full_name')
 
     list_display = [
-        'username', 'full_name', 'student_class', 'email', 'is_staff', 'is_active', 'headquarter'
+        'username', 'full_name', 'student_class', 'email', 'semester', 'is_staff', 'is_active', 'headquarter'
     ]
 
     list_display_links = ['username']
 
-    list_editable = ('full_name', 'student_class', 'email', 'is_active')
+    list_editable = ('full_name', 'student_class', 'email', 'is_active', 'semester')
 
-    list_filter = ['student_class', 'is_staff', 'is_active', 'headquarter']
+    list_filter = ['student_class', 'is_staff', 'is_active', 'headquarter', 'semester']
 
     formfield_overrides = {
         models.CharField: {'widget': TextInput(attrs={'size': '16'})}

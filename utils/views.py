@@ -2,7 +2,7 @@ from django.shortcuts import redirect, render, HttpResponse
 from django.contrib.auth.decorators import login_required, permission_required
 from django.contrib.auth.models import Group
 from user.models import Player
-import json
+import json, datetime
 
 
 @login_required(login_url='/login')
@@ -24,6 +24,16 @@ def add_users_view(request):
                 if group_index != '':
                     target_groups.append(int(group_index))
 
+            today = datetime.datetime.today()
+            year = today.year
+            month = today.month
+            if month >= 8:
+                semester = str(year) + '-0'
+            elif month <= 1:
+                semester = str(year - 1) + '-0'
+            else:
+                semester = str(year - 1) + '-1'
+
             for user in data_users:
                 if user != '':
                     user_info = user.split(',')
@@ -38,10 +48,14 @@ def add_users_view(request):
                             student_class=user_class,
                             password='123456',
                             email=user_id + '@bnu.edu.cn',
-                            headquarter=request.user.headquarter
+                            headquarter=request.user.headquarter,
+                            semester=semester
                         )
                     else:
                         player = potential_existing_players[0]
+                        if not player.is_staff:
+                            player.semester = semester
+                            player.save()
 
                     for group_index in target_groups:
                         player.groups.add(Group.objects.get(name=groups[group_index]))
