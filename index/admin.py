@@ -10,7 +10,7 @@ class GameAdmin(admin.ModelAdmin):
 
     list_display_links = ['user', 'session', 'level', 'scene']
 
-    list_filter = ['user__student_class', 'user__headquarter', 'session']
+    list_filter = ['user__student_class', 'user__headquarter', 'session', 'user__semester']
 
     ordering = ['user', 'session']
 
