@@ -87,15 +87,11 @@ class PlayerAdmin(UserAdmin):
 
         if not obj:
             return (
-                (_('Personal info'), {'fields': ('username', 'full_name', 'student_class', 'headquarter', 'email', 'password1', 'password2')}),
+                (_('Personal info'), {'fields': ('username', 'full_name', 'student_class', 'headquarter', 'email', 'semester', 'password1', 'password2')}),
                 (_('Permissions'), {'fields': ('is_active','is_staff', 'is_superuser', 'groups',),},),
             )
         else:
-            return (
-                (_('Personal info'), {'fields': ('username', 'full_name', 'student_class', 'headquarter', 'email')}),
-                (_('Permissions'), {'fields': ('is_active','is_staff', 'is_superuser', 'groups', 'user_permissions',),},),
-                (_('Important dates'), {'fields': ('last_login', 'date_joined')}),
-            )
+            return fieldsets
 
     # Actions
     @admin.action(description='允许游玩 心理学经典研究I 小游戏')
