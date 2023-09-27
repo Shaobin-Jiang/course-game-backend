@@ -3,6 +3,23 @@ from django.db import models
 from django.utils.translation import gettext_lazy as _
 from .models import *
 
+class ClassListFilter(admin.SimpleListFilter):
+    title = _('班级')
+    parameter_name = 'custom_student_class'
+
+    def lookups(self, request, model_admin):
+        qs = model_admin.get_queryset(request)
+        class_list = list(qs.values_list('user__student_class'))
+        classes = list(map(lambda x: x[0], class_list))
+        unique = list(set(classes))
+        return list(map(lambda x: (x, _(x)), unique))
+
+    def queryset(self, request, qs):
+        if self.value() is None:
+            return qs
+        else:
+            return qs.filter(user__student_class=self.value())
+
 class GameAdmin(admin.ModelAdmin):
     search_fields = ('user__username', 'user__full_name')
 
@@ -43,10 +60,9 @@ class GameAdmin(admin.ModelAdmin):
 
     def get_list_filter(self, request):
         if not request.user.is_superuser:
-            return ['user__student_class', 'session']
+            return [ClassListFilter, 'session', 'user__semester']
         else:
             return self.list_filter
-
 
     def get_queryset(self, request):
         queryset = super().get_queryset(request)
