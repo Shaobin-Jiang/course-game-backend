@@ -110,6 +110,7 @@ class PlayerAdmin(UserAdmin):
         for player in targets:
             player.groups.remove(group)
         self.message_user(request, ngettext('成功移除 %d 名玩家', '成功移除 %d 名玩家', len(targets),) % len(targets), messages.SUCCESS)
+
     @admin.action(description='允许游玩 心理学经典研究II 小游戏')
     def authorize_classic_studies_2(self, request, queryset):
         group = Group.objects.get(name='心理学经典研究II')
