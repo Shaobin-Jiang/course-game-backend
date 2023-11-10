@@ -6,7 +6,7 @@
   - python3版本：3.10.6
   - 通过pip安装依赖:
     - django == 4.0.4
-    - django-cors-header == 3.12.0
+    - django-cors-headers == 3.12.0
     - django-simpleui == 2023.3.1
     - mysqlclient == 2.1.1
     - uwsgi == 2.0.21
@@ -16,6 +16,14 @@
   - 配置文件（`config.py`）不在git上（显然的），里面记录了密钥、数据库密码等敏感信息，可以找你的前一任运维同学要一下
   - 国内的网络环境嘛……反正`git pull`时不时会报错，多试几次就行
 3. 如果数据库也寄了，你可能需要重新去`config.py`修改相应的配置。你还需要在新的数据库中创建`coursegame`这个database，剩下的建表操作就不用管了，Django会自己处理
+
+不过还是要migrate一下:
+
+```bash
+python manage.py makemigrations index
+python manage.py makemigrations user
+python manage.py migrate
+```
 4. 如果cdn寄了，也需要上去重新配置，重点是把`cache-control`那一套设置一下，省的用户每次进入游戏都要重新加载静态资源
 5. 如果前面都没什么问题，到这里应该可以正常跑起来了。接下来：
   - 先需要创建一个超级用户
