@@ -176,23 +176,30 @@ window.finished_marker = '/assets/classic-studies-1/lock_btn.png';
 window.unfinished_marker = '/assets/classic-studies-1/play_btn.png';
 
 window.sessions = [
-    {position: [18.58, 11.12, 1.64, 1.64, scale], get: window.loaded_sessions.split_brain()},
-    {position: [9.45, 10.56, 1.64, 1.64, scale], get: window.loaded_sessions.minnesota_twins()},
-    {position: [21.63, 7.89, 1.64, 1.64, scale], get: window.loaded_sessions.rats()},
-    {position: [28.42, 11.12, 1.64, 1.64, scale], get: window.loaded_sessions.visual_cliff()},
-    {position: [4.53, 11.38, 1.64, 1.64, scale], get: window.loaded_sessions.dreams()},
+    {position: [18.58, 11.12, 1.64, 1.64, scale], get: window.loaded_sessions.split_brain(), name: '裂脑人'},
+    {position: [9.45, 10.56, 1.64, 1.64, scale], get: window.loaded_sessions.minnesota_twins(), name: '双生子'},
+    {position: [21.63, 7.89, 1.64, 1.64, scale], get: window.loaded_sessions.rats(), name: '老鼠的大脑'},
+    {position: [28.42, 11.12, 1.64, 1.64, scale], get: window.loaded_sessions.visual_cliff(), name: '视崖'},
+    {position: [4.53, 11.38, 1.64, 1.64, scale], get: window.loaded_sessions.dreams(), name: '睡眠与梦'},
 ];
 
 window.about_text = `
     <h1>关于游戏</h1>
     <p>本游戏为旧版心理学经典研究课程游戏重制版，在尽可能保留旧版游戏特色的基础上，进行了一定的优化，以改善同学们的游戏体验。</p>
-    <p>游戏仍然处于早期测试阶段，欢迎同学们在游玩过程中，积极提出改进意见，或就遇到的程序错误进行反馈</p>
+    <p>游戏虽然经过了较多测试，但开发中 bug 或是设计不合理之处是难免存在的，欢迎同学们在游玩过程中，积极提出改进意见，或就遇到的程序错误进行反馈</p>
     <p>反馈方式：</p>
     <ul>
         <li><a href="https://github.com/Shaobin-Jiang/course-game/issues/new" target="_blank">Github</a>（推荐）</li>
         <li>通过邮件反馈：<a href="mailto: shaobin-jiang@outlook.com">shaobin-jiang@outlook.com</a></li>
     </ul>
     <h2>版本历史</h2>
+    <p><b>&bull; Version 0.1.0 (2024.1.1)</b></p>
+    <p>经历了一年、两轮课程的测试，现推出了首个正式版本，更新内容如下：</p>
+    <ul>
+        <li>废弃对 Safari 浏览器的支持</li>
+        <li>游戏内菜单新增“返回首页”选项</li>
+        <li>游戏地图界面新增游戏关卡名称标签</li>
+    </ul>
     <p><b>&bull; Version 0.0.1-beta (2023.1.15)</b></p>
     <p>首个测试版本，相比于原版小游戏，更新内容如下：</p>
     <ul>

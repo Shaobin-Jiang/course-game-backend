@@ -155,12 +155,12 @@ window.finished_marker = '/assets/classic-studies-2/lock_btn.png';
 window.unfinished_marker = '/assets/classic-studies-2/play_btn.png';
 
 window.sessions = [
-    {position: [18.58, 11.12, 1.64, 1.64, scale], get: window.loaded_sessions.albert()},
-    {position: [9.45, 10.56, 1.64, 1.64, scale], get: window.loaded_sessions.superstitious_pigeons()},
-    {position: [21.63, 7.89, 1.64, 1.64, scale], get: window.loaded_sessions.rosenthal()},
-    {position: [28.42, 11.12, 1.64, 1.64, scale], get: window.loaded_sessions.maps()},
-    {position: [4.53, 11.38, 1.64, 1.64, scale], get: window.loaded_sessions.memory()},
-    {position: [18.58, 14.27, 1.64, 1.64, scale], get: window.loaded_sessions.love()},
+    {position: [18.58, 11.12, 1.64, 1.64, scale], get: window.loaded_sessions.albert(), name: '小阿尔伯特'},
+    {position: [9.45, 10.56, 1.64, 1.64, scale], get: window.loaded_sessions.superstitious_pigeons(), name: '迷信的鸽子'},
+    {position: [21.63, 7.89, 1.64, 1.64, scale], get: window.loaded_sessions.rosenthal(), name: '罗森塔尔'},
+    {position: [28.42, 11.12, 1.64, 1.64, scale], get: window.loaded_sessions.maps(), name: '认知地图'},
+    {position: [4.53, 11.38, 1.64, 1.64, scale], get: window.loaded_sessions.memory(), name: '错误记忆'},
+    {position: [18.58, 14.27, 1.64, 1.64, scale], get: window.loaded_sessions.love(), name: '依恋'},
 ];
 
 window.about_text = `
