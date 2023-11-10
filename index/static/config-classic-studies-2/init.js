@@ -173,6 +173,13 @@ window.about_text = `
         <li>通过邮件反馈：<a href="mailto: shaobin-jiang@outlook.com">shaobin-jiang@outlook.com</a></li>
     </ul>
     <h2>版本历史</h2>
+    <p><b>&bull; Version 0.1.0 (2024.1.1)</b></p>
+    <p>经历了一年、两轮课程的测试，现推出了首个正式版本，更新内容如下：</p>
+    <ul>
+        <li>废弃对 Safari 浏览器的支持</li>
+        <li>游戏内菜单新增“返回首页”选项</li>
+        <li>游戏地图界面新增游戏关卡名称标签</li>
+    </ul>
     <p><b>&bull; Version 0.0.1-beta (2023.1.15)</b></p>
     <p>首个测试版本，相比于原版小游戏，更新内容如下：</p>
     <ul>
