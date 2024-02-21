@@ -19,6 +19,7 @@ def index(request):
     # TODO: allow staff users to see this tab once the testing is complete
     if request.user.is_superuser:
         game_list.append(('游戏平台管理系统', '/admin', True))
+        game_list.append(('批量添加用户', '/utils-add-users', True))
 
     game_list.append(('退出登录', '/logout', True))
 
