@@ -193,6 +193,11 @@ window.about_text = `
         <li>通过邮件反馈：<a href="mailto: shaobin-jiang@outlook.com">shaobin-jiang@outlook.com</a></li>
     </ul>
     <h2>版本历史</h2>
+    <p><b>&bull; Version 0.1.1 (2024.2.29)</b></p>
+    <p>Bug 修复</p>
+    <ul>
+        <li>针对进度错误导致卡关的情况，会自动前进一个关卡</li>
+    </ul>
     <p><b>&bull; Version 0.1.0 (2024.1.1)</b></p>
     <p>经历了一年、两轮课程的测试，现推出了首个正式版本，更新内容如下：</p>
     <ul>
