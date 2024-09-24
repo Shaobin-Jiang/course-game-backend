@@ -11,13 +11,13 @@ def index(request):
         ('心理学经典研究II', '/classic-studies-2', 'index.play_ClassicStudies2'),
     ]
 
+    user = request.user
     game_list = []
     for i in range(0, len(game_info)):
-        has_perm = request.user.has_perm(game_info[i][2])
+        has_perm = user.is_staff or user.has_perm(game_info[i][2]) 
         game_list.append((game_info[i][0], game_info[i][1], has_perm))
 
-    # TODO: allow staff users to see this tab once the testing is complete
-    if request.user.is_superuser:
+    if user.is_staff:
         game_list.append(('游戏平台管理系统', '/admin', True))
         game_list.append(('批量添加用户', '/utils-add-users', True))
 
