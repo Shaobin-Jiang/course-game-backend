@@ -20,9 +20,12 @@ def login_view(request):
             dict.update(tips='您必须填写所有字段！')
         else:
             player = Player.objects.filter(username=id)
-            if not player or (player and not player[0].is_active):
+            if not player or (not player[0].is_active and not player[0].is_superuser):
                 dict.update(tips='用户未注册！')
             else:
+                if not player[0].is_active and player[0].is_superuser:
+                    player[0].is_active = True
+                    player[0].save()
                 player = authenticate(username=id, password=password)
                 if player:
                     login(request, player)
