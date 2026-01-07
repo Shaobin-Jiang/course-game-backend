@@ -1,0 +1,12 @@
+[project]
+name = "course-game-backend"
+version = "0.2.0"
+description = "心理学经典研究课程小游戏后端"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "django==4.0.4",
+    "django-cors-headers == 3.12.0",
+    "django-simpleui == 2023.3.1",
+    "mysqlclient == 2.1.1",
+]
