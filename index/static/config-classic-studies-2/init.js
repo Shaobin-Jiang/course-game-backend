@@ -173,6 +173,11 @@ window.about_text = `
         <li>通过邮件反馈：<a href="mailto: shaobin-jiang@outlook.com">shaobin-jiang@outlook.com</a></li>
     </ul>
     <h2>版本历史</h2>
+    <p><b>&bull; Version 0.2.0 (2026.1.7)</b></p>
+    <p>玩法优化</p>
+    <ul>
+        <li>答错题目后不会立刻重新回去读文献，而是有总共 3 次尝试机会，如果都错了才需要重新读文献</li>
+    </ul>
     <p><b>&bull; Version 0.1.1 (2024.2.29)</b></p>
     <p>Bug 修复</p>
     <ul>
